@@ -1,1 +1,4 @@
 # golang-katas
+
+---
+
