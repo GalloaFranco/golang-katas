@@ -1,4 +1,3 @@
-# golang-katas
+# Golang Codewars katas 🥷🏻
 
----
 
