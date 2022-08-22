@@ -14,37 +14,36 @@ Example
 "aA11" -> 2 # 'a' and '1'
 "ABBA" -> 2 # 'A' and 'B' each occur twice
 */
-package kata
+package katas
 
 import (
-  "strings"
+	"strings"
 )
 
-func duplicate_count(s1 string) int {
+func Duplicate_count(s1 string) int {
 
-  strArr := strings.Split(s1, "")
-  strMap := make(map[string]int)
+	strArr := strings.Split(s1, "")
+	strMap := make(map[string]int)
 
-  for _, value := range strArr {
-    strMap[strings.ToLower(value)] = 0
-  }
+	for _, value := range strArr {
+		strMap[strings.ToLower(value)] = 0
+	}
 
+	for i := 0; i < len(strArr); i++ {
+		counter := 0
+		for j := 0; j < len(strArr); j++ {
+			if strings.ToLower(strArr[i]) == strings.ToLower(strArr[j]) {
+				counter++
+				strMap[strings.ToLower(strArr[i])] = counter
+			}
+		}
+	}
+	result := 0
+	for _, value := range strMap {
+		if value >= 2 {
+			result++
+		}
+	}
 
-  for i := 0; i < len(strArr); i++ {
-    counter := 0
-    for j := 0; j < len(strArr); j++ {
-      if strings.ToLower(strArr[i]) == strings.ToLower(strArr[j]) {
-        counter++
-        strMap[strings.ToLower(strArr[i])] = counter
-      }
-    }
-  }
-  result := 0
-  for _, value := range strMap {
-    if value >= 2 {
-      result++
-    }
-  }
-
-  return result
+	return result
 }

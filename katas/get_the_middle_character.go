@@ -23,27 +23,26 @@ The middle character(s) of the word represented as a string.
 */
 
 // Solution 1
-package kata
-
-
-func GetMiddle(s string) string {
-  strLen := len(s)
-  if (strLen % 2 != 0) { return string(s[strLen / 2]) }
-  return s[(strLen / 2) - 1 : strLen / 2 + 1]
-}
-
-// Solution 2
-package kata
+package katas
 
 import "strings"
 
-func GetMiddle(s string) string {
-  strArr := strings.Split(s, "")
-  strLen := len(strArr)
+func GetMiddleBytes(s string) string {
+	strLen := len(s)
+	if strLen%2 != 0 {
+		return string(s[strLen/2])
+	}
+	return s[(strLen/2)-1 : strLen/2+1]
+}
 
-  if (strLen % 2 != 0) {
-    return strArr[int(strLen / 2)]
-  } else {
-    return strArr[(strLen / 2) - 1] + strArr[strLen / 2]
-  }
+// Solution 2º
+func GetMiddleStrings(s string) string {
+	strArr := strings.Split(s, "")
+	strLen := len(strArr)
+
+	if strLen%2 != 0 {
+		return strArr[int(strLen/2)]
+	} else {
+		return strArr[(strLen/2)-1] + strArr[strLen/2]
+	}
 }
