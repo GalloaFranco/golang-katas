@@ -1,4 +1,4 @@
 #IDEs
 .idea
 #Test
-coverage/*
+coverage
