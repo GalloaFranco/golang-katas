@@ -32,7 +32,7 @@ func Duplicate_count(s1 string) int {
 	for i := 0; i < len(strArr); i++ {
 		counter := 0
 		for j := 0; j < len(strArr); j++ {
-			if strings.ToLower(strArr[i]) == strings.ToLower(strArr[j]) {
+			if strings.EqualFold(strArr[i], strArr[j]) {
 				counter++
 				strMap[strings.ToLower(strArr[i])] = counter
 			}
